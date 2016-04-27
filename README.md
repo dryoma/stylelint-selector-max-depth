@@ -1,7 +1,5 @@
 # stylelint-selector-max-depth
 
-[![Build Status](https://travis-ci.org/dryoma/stylelint-selector-max-depth.svg)](https://travis-ci.org/dryoma/stylelint-selector-max-depth)
-
 A [stylelint](https://github.com/stylelint/stylelint) custom rule for limiting CSS selectors depth.
 
 ## Installation and usage
@@ -36,6 +34,8 @@ This rule allows you to limit depth for CSS selectors. To put it simply, selecto
    |        |              ^          |
   Lv1      Lv2            Lv3        Lv4  -- these are depth levels */
 ```
+
+Only the child (`h1 > a`) and descendant (`h1 a`) combinators are considered to create a new depth level; adjacent combinators (`p + p`, `.foo ~ bar`) don't.
 
 ### Why another rule?
 

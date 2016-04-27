@@ -1,0 +1,50 @@
+{
+  "name": "stylelint-selector-max-depth",
+  "version": "0.1.0",
+  "description": "A stylelint custom rule to limit selector depth",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint . --ignore-path .gitignore",
+    "test": "tape test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dryoma/stylelint-selector-max-depth.git"
+  },
+  "keywords": [
+    "stylelint",
+    "stylelint-plugin",
+    "css",
+    "selector depth",
+    "nesting",
+    "linter"
+  ],
+  "author": "dryoma",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dryoma/stylelint-selector-max-depth/issues"
+  },
+  "homepage": "https://github.com/dryoma/stylelint-selector-max-depth#readme",
+  "devDependencies": {
+    "eslint": "^2.8.0",
+    "eslint-config-airbnb": "^8.0.0",
+    "eslint-plugin-import": "^1.6.0",
+    "tape": "^4.2.2"
+  },
+  "dependencies": {
+    "postcss-resolve-nested-selector": "^0.1.1",
+    "stylelint": ">=6.0.0",
+    "stylelint-rule-tester": "^0.6.1"
+  },
+  "eslintConfig": {
+    "extends": "airbnb/legacy",
+    "rules": {
+      "max-len": [
+        2,
+        80,
+        4
+      ],
+      "func-names": 0
+    }
+  }
+}
