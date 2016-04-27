@@ -5,7 +5,7 @@ A [stylelint](https://github.com/stylelint/stylelint) custom rule for limiting C
 ## Installation and usage
 
 ```
-npm install git@github.com/dryoma/stylelint-selector-max-depth.git
+npm install git://github.com/dryoma/stylelint-selector-max-depth.git
 ```
 (sorry, for now only like that)
 
