@@ -1,5 +1,7 @@
 # stylelint-selector-max-depth
 
+[![NPM version](http://img.shields.io/npm/v/stylelint-selector-max-depth.svg)](https://www.npmjs.org/package/stylelint-selector-max-depth) [![Build Status](https://travis-ci.org/dryoma/stylelint-selector-max-depth.svg?branch=master)](https://travis-ci.org/dryoma/stylelint-selector-max-depth)
+
 A [stylelint](https://github.com/stylelint/stylelint) custom rule for limiting CSS selectors depth.
 
 ## Installation and usage
