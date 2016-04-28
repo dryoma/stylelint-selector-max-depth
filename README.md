@@ -39,9 +39,9 @@ Only the child (`h1 > a`) and descendant (`h1 a`) combinators are considered to 
 
 ### Why another rule?
 
-At the moment [stylelint](https://github.com/stylelint/stylelint) - a great CSS linter - has no way to control selector depth without hurting something else. It has rules [to control Sass nesting](http://stylelint.io/user-guide/rules/max-nesting-depth/); to disallow certain compound selectors ([type selectors](http://stylelint.io/user-guide/rules/selector-no-type/), [IDs](http://stylelint.io/user-guide/rules/selector-no-id/)) and even [to limit a selector's specificity](http://stylelint.io/user-guide/rules/selector-max-specificity/) - but not the depth.
+At the moment [stylelint](https://github.com/stylelint/stylelint) - a great CSS linter - has no way to control selector depth without hurting something else. It has rules [to control Sass nesting](http://stylelint.io/user-guide/rules/max-nesting-depth/); to disallow certain simple selectors ([type selectors](http://stylelint.io/user-guide/rules/selector-no-type/), [IDs](http://stylelint.io/user-guide/rules/selector-no-id/)) and even [to limit a selector's specificity](http://stylelint.io/user-guide/rules/selector-max-specificity/) - but not the depth.
 
-Consider the case when the requirements are: no more than 3 levels of compound selectors; and no limit to selector type.
+Consider the case when the requirements are: no more than 3 levels of simple selectors; and no limit to selector type.
 
 ```css
 .class1 .class2 .class3 { ... }      // 1. We want this to work.
@@ -53,7 +53,7 @@ Consider the case when the requirements are: no more than 3 levels of compound s
 ul li ul li div a span span { ... }  // 6. No way we would want this!
 ```
 
-We can't force it with `selector-max-specificity`: `0,3,0`, which is necessary for selector **2** to comply, will cut selector **3**. Selector **6**, on the other hand, has [specificity](http://www.w3.org/TR/selectors/#specificity) of *just 8* for any classname selector not to comply and *as much as 8* to allow eight (!) compound type selectors in a row.
+We can't force it with `selector-max-specificity`: `0,3,0`, which is necessary for selector **2** to comply, will cut selector **3**. Selector **6**, on the other hand, has [specificity](http://www.w3.org/TR/selectors/#specificity) of *just 8* for any classname selector not to comply and *as much as 8* to allow eight (!) type selectors in a row.
 
 Neither we can force this with `max-nesting-depth`, since it only controls Sass nesting and the selectors can be written without using nesting, e.g:
 
