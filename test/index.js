@@ -17,6 +17,10 @@ testRule(2, function (tr) {
   basics(tr);
 
   tr.ok('a b { top: 0; }');
+  tr.ok(' a   b { top: 0; }');
+  tr.ok(' a>  b { top: 0; }');
+  tr.ok(' a  >  b { top: 0; }');
+  tr.ok(' a  >b { top: 0; }');
   tr.ok('a b, a b.c { top: 0; }');
   tr.notOk('a b c { top: 0; }', messages.rejected('a b c', 2));
   tr.ok('a { b { top: 0; }}');
@@ -62,6 +66,7 @@ testRule(2, function (tr) {
   tr.ok('a + b ~ c z { top: 0; }');
   tr.notOk('a > b ~ c z { top: 0; }', messages.rejected('a > b ~ c z', 2));
   tr.ok('a > b ~ c + z { top: 0; }');
+  tr.ok('a /* comment */ z { top: 0; }');
 });
 
 testRule(3, function (tr) {
