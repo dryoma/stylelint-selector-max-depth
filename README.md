@@ -5,9 +5,8 @@ A [stylelint](https://github.com/stylelint/stylelint) custom rule for limiting C
 ## Installation and usage
 
 ```
-npm install git://github.com/dryoma/stylelint-selector-max-depth.git
+npm install stylelint-selector-max-depth
 ```
-(sorry, for now only like that)
 
 In your stylelint config add `"stylelint-selector-max-depth"` to the `plugins` array, and `"selector-max-depth": N` to the rules, specifying a max selector depth as the primary option, like so:
 
