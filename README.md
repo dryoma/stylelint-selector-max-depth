@@ -28,7 +28,7 @@ In your stylelint config add `"stylelint-selector-max-depth"` to the `plugins` a
 
 ## Details
 
-This rule allows you to limit depth for CSS selectors. To put it simply, selector depth is how many levels of HTML structure (not necesserily direct descendants) the selector is reflecting.
+This rule allows you to limit depth for CSS selectors. To put it simply, selector depth in terms of this rule is how many levels of HTML structure (not necessarily direct descendants) the selector is reflecting.
 
 ```css
 .foo .bar[data-val] > .baz + .boom .lorem {
@@ -38,6 +38,14 @@ This rule allows you to limit depth for CSS selectors. To put it simply, selecto
 ```
 
 Only the child (`h1 > a`) and descendant (`h1 a`) combinators are considered to create a new depth level; adjacent combinators (`p + p`, `.foo ~ bar`) don't.
+
+Rules with many levels of depths in selectors can be very brittle and hard to maintain because:
+
+* To override such rules we have to either repeat the whole selector (with all the N levels) or add `!important` to the overriding declarations.
+* If such rules are to be overridden by the rules, that should be defined *before* them, those rules have to have *greater* specificity, which requires either `!important` or adding more selectors.
+* A change in HTML structure could require rewriting all those rule mentioned above.
+
+You can read more about selectors depth is [SMACSS book](http://smacss.com/book/applicability). Although note, that this rule is not about the actual number of HTML levels, since it is usually hard to say how many elements wrap the `a` in `body a` without looking in the markup.
 
 ### Why another rule?
 
