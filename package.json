@@ -1,6 +1,6 @@
 {
   "name": "stylelint-selector-max-depth",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "A stylelint custom rule to limit selector depth",
   "main": "index.js",
   "scripts": {
